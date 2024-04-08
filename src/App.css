@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+header{
+  display: flex;
+  justify-content: space-around;
+}
+.logo{
+  width: 100px;
+}
+.menu{
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+}
+.pokemons100{
+  display: flex;
+  flex-wrap: wrap;
+}
