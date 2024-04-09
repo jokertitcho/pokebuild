@@ -1,35 +1,37 @@
 import { useEffect, useState } from "react";
 
-const PokByResist = ({resistance}) => {
+const PokByResist = () => {
 
     const[poksResist, setPokResist] = useState(false)
+    const[typesAll, setTypeAll] = useState(false)
 
-    /* const findByResist = (event)=>{
+
+    const findByResist = (event)=>{
         event.preventDefault()
         const type = event.target.type.value
         fetch("https://pokebuildapi.fr/api/v1/pokemon/type/resistance/" + type)
         .then((data)=>{return data.json()})
         .then((arr)=>{setPokResist(arr)})
 
-    } */
+    }
     useEffect(()=>{
-        fetch("https://pokebuildapi.fr/api/v1/pokemon/type/resistance/" + resistance)
+        fetch("https://pokebuildapi.fr/api/v1/types")
         .then((data)=>{return data.json()})
-        .then((arr)=>{setPokResist(arr)})
+        .then((arr)=>{setTypeAll(arr)})
     })
 
     return (
-        <div> <h2>Pokemon resitant a {resistance}</h2>
-
-           {/*  <form onSubmit={findByResist}>
-                <select name="type" id="resistance" >
-                    <option value="acier">Acier</option>    
-                    <option value="eau">Eau</option>
-                    <option value="feu">Feu</option>
-                    <option value="plante">Plante</option>
+        <div> 
+            <form onSubmit={findByResist}>
+                <select name="type" id="resistance" >{typesAll &&
+                    typesAll.map((opt)=>{
+                        return(<option value={opt.name}>{opt.name}</option>)
+                         
+                    })
+                }
                 </select>  
             <input type="submit" />          
-            </form> */}
+            </form>
             <div>
                 {poksResist ? <div>{poksResist.map((pok)=>{
                     return (

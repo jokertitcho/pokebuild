@@ -15,10 +15,8 @@ function App() {
   return (
     <div className="App">
       <Header/>
-      <PokByResist resistance ={"Acier"}/>
-      <PokByResist resistance ={"Eau"}/>
-      <PokByResist resistance ={"Feu"}/>
-      <PokByResist resistance ={"Plante"}/>
+      <PokByResist />
+      
       {/* <MyPokemonTeams/>
       <OneHundred/>
       <Types/>
