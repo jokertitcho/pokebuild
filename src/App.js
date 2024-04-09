@@ -6,27 +6,24 @@ import FeuEauPlante from "./componants/FeuEauPlante";
 import MyPokemonTeams from "./componants/MyPokemonTeams";
 import PokemonByGeneration from "./componants/PokemonByGeneration";
 import FindPokemon from "./componants/FindPokemon";
-
+import PokByResist from "./componants/PokByResist"
 function App() {
   
-const gen1 = 1
-const gen2 = 2
-const gen3 = 3
-const gen4 = 4
-const gen5 = 5
-const gen6 = 6
-const gen7 = 7
-const gen8 = 8
+
  
 
   return (
     <div className="App">
       <Header/>
+      <PokByResist resistance ={"Acier"}/>
+      <PokByResist resistance ={"Eau"}/>
+      <PokByResist resistance ={"Feu"}/>
+      <PokByResist resistance ={"Plante"}/>
       {/* <MyPokemonTeams/>
       <OneHundred/>
       <Types/>
       <FeuEauPlante/> */}
-      <PokemonByGeneration generation={gen1} />
+      {/* <PokemonByGeneration generation={gen1} /> */}
       {/* <PokemonByGeneration generation={gen2} />
       <PokemonByGeneration generation={gen3} />
       <PokemonByGeneration generation={gen4} />
@@ -36,7 +33,7 @@ const gen8 = 8
       <PokemonByGeneration generation={gen8} /> */}
       
 
-      <FindPokemon/>
+      {/* <FindPokemon/> */}
 
     </div>
   );
