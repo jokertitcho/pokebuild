@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
 const Types = () => {
     const[arrTypes, setArrTypes] = useState(false)
 
-    const appelTypes = ()=>{
+    useEffect(()=>{
+
         fetch ("https://pokebuildapi.fr/api/v1/types")
         .then((types)=>{
            return types.json()
@@ -12,11 +13,13 @@ const Types = () => {
         .then((data)=>{
             setArrTypes(data)
         })
-    }
+    }, [])
+        
+    
 
     return (
         <div>
-            <button onClick={appelTypes}>Afficher types pokemon</button>
+            
             {arrTypes && <div className="pokemons100">
                 {arrTypes.map((type)=>{
                     return(

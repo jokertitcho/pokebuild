@@ -1,18 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
 const OneHundred = () => {
     const [poksHundred, setPoksHundred] = useState(null)
     console.log(poksHundred);
-    const callPokeApi = ()=>{
+    useEffect(()=>{
+
         fetch("https://pokebuildapi.fr/api/v1/pokemon/limit/100")
         .then((pokemons)=>{return pokemons.json()})
         .then((data)=>{setPoksHundred(data)})
-    }
+    },[])
+        
+   
     return (
         <div >
-            <button onClick={callPokeApi}>Appel 100 pokemons</button>
-            <div></div>
+            
             {poksHundred && <p className="pokemons100">{poksHundred.map((pok)=>{
                 return(
                     <div className="card-pokemon">
