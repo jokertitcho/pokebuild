@@ -7,6 +7,8 @@ import MyPokemonTeams from "./componants/MyPokemonTeams";
 import PokemonByGeneration from "./componants/PokemonByGeneration";
 import FindPokemon from "./componants/FindPokemon";
 import PokByResist from "./componants/PokByResist"
+import {BrowserRouter, Routes ,Route} from "react-router-dom"
+
 function App() {
   
 
@@ -15,7 +17,19 @@ function App() {
   return (
     <div className="App">
       <Header/>
-      <PokByResist />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/MyPokemonTeazms" element={<MyPokemonTeams/>}/>
+          <Route path="/FindPokemon" element={<FindPokemon/>}/>
+          <Route path="/FeuEauPlante" element={<FeuEauPlante/>}/>
+          <Route path="/OneHundred" element={<OneHundred/>}/>
+          <Route path="/PokByResist" element={<PokByResist/>}/>
+          <Route path="/PokemonByGeneration" element={<PokemonByGeneration/>}/>
+          <Route path="/Types" element={<Types/>}/>
+
+        </Routes>
+      
+      </BrowserRouter>
       
       {/* <MyPokemonTeams/>
       <OneHundred/>
