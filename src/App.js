@@ -22,7 +22,7 @@ function App() {
           <Route path="/MyPokemonTeazms" element={<MyPokemonTeams/>}/>
           <Route path="/FindPokemon" element={<FindPokemon/>}/>
           <Route path="/FeuEauPlante" element={<FeuEauPlante/>}/>
-          <Route path="/OneHundred" element={<OneHundred/>}/>
+          <Route path="/" element={<OneHundred/>}/>
           <Route path="/PokByResist" element={<PokByResist/>}/>
           <Route path="/PokemonByGeneration" element={<PokemonByGeneration/>}/>
           <Route path="/Types" element={<Types/>}/>
